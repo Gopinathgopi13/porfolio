@@ -244,7 +244,40 @@ function Index() {
 
       {/* PROJECT */}
       <Section id="project">
-        <SectionHeader index="03" title="Personal Project" kicker="Open source, in production." />
+        <SectionHeader index="03" title="Personal Projects" kicker="Tools I've built." />
+        <div className="space-y-6">
+        <Reveal>
+          <div className="glow-card glow-card-hover relative overflow-hidden rounded-2xl border border-border bg-surface p-8 md:p-10">
+            <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
+            <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
+              <div>
+                <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+                  <span className="text-primary">Python</span><span>·</span><span>Desktop &amp; CLI</span>
+                </div>
+                <h3 className="mt-3 font-mono text-3xl font-semibold tracking-tight text-foreground md:text-4xl">JobSprint</h3>
+                <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                  Built a cross-platform job application assistant that automates job search and application workflows across Naukri, Hirist, and Foundit. It combines browser automation, resume-based matching, reusable form answers, and application tracking.
+                </p>
+                <ul className="mt-5 max-w-3xl space-y-2 text-sm leading-relaxed text-muted-foreground">
+                  <li>Browser automation with Playwright, skip rules, and supported application form filling.</li>
+                  <li>Resume parsing and job-fit scoring, with deterministic fuzzy matching against a local SQLite knowledge base and user-in-the-loop answers remembered for future applications.</li>
+                  <li>Excel application and session tracking, plus an optional FastAPI desktop dashboard with live progress and profile management, sharing the CLI application engine.</li>
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-1.5">
+                  {["Python", "Playwright", "FastAPI", "SQLite", "RapidFuzz", "pdfplumber", "openpyxl", "JavaScript", "HTML", "CSS"].map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                </div>
+              </div>
+              <a
+                href="https://github.com/Gopinathgopi13/job-agent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-fit items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+              >
+                GitHub link coming soon
+              </a>
+            </div>
+          </div>
+        </Reveal>
         <Reveal>
           <div className="glow-card glow-card-hover relative overflow-hidden rounded-2xl border border-border bg-surface p-8 md:p-10">
             <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
@@ -318,6 +351,7 @@ function Index() {
             </div>
           </div>
         </Reveal>
+        </div>
       </Section>
 
       {/* SKILLS */}
