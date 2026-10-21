@@ -28,11 +28,27 @@ const SKILL_CLUSTERS = [
   {
     label: "Ship & integrate",
     description: "Tooling, ops, and hardware boundaries",
-    titles: ["Testing", "DevOps & Tooling", "Integration & Hardware"],
+    titles: ["Testing & Quality", "DevOps & Tooling", "Integration & Security", "Ways of Working"],
   },
 ] as const;
 
 const TOTAL_SKILLS = SKILL_GROUPS.reduce((sum, group) => sum + group.items.length, 0);
+
+function getExperienceDuration(startDate: string, endDate = new Date()) {
+  const start = new Date(`${startDate}T00:00:00`);
+  let months = (endDate.getFullYear() - start.getFullYear()) * 12 + endDate.getMonth() - start.getMonth();
+  if (endDate.getDate() < start.getDate()) months -= 1;
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+  return [years > 0 ? `${years}+ year${years === 1 ? "" : "s"}` : "", remainingMonths > 0 ? `${remainingMonths} month${remainingMonths === 1 ? "" : "s"}` : ""]
+    .filter(Boolean)
+    .join(" ");
+}
+
+function getTotalExperience() {
+  const earliestStart = ROLES.map((role) => role.startDate).sort()[0];
+  return getExperienceDuration(earliestStart);
+}
 
 function SectionHeader({ index, title, kicker }: { index: string; title: string; kicker?: string }) {
   return (
@@ -166,7 +182,7 @@ function Index() {
         <div className="grid gap-8 lg:grid-cols-1">
           <Reveal>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Full-Stack Software Engineer with experience building scalable web applications,
+              Full-Stack Software Engineer with <span className="text-foreground">{getTotalExperience()}</span> of experience building scalable web applications,
               distributed systems, and enterprise-grade platforms using{" "}
               <span className="text-foreground">React.js</span>,{" "}
               <span className="text-foreground">TypeScript</span>,{" "}
@@ -174,7 +190,7 @@ function Index() {
               <span className="text-foreground">Go</span>. Skilled in designing end-to-end solutions
               across hospitality, device management, and enterprise security domains — covering
               modern frontend architectures, backend microservices, REST APIs, and cloud-native
-              deployments. Experienced with event-driven systems, real-time communication (MQTT,
+              deployments. Experienced in access management, multi-tenant architecture, and team leadership, as well as event-driven systems, real-time communication (MQTT,
               WebSockets, RabbitMQ), background job processing with BullMQ & Redis, and database
               design with SQL and NoSQL technologies.
             </p>

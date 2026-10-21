@@ -12,6 +12,7 @@ export type ProjectBlock = {
 export type Role = {
   title: string;
   company: string;
+  startDate: string;
   meta: string;
   projects: ProjectBlock[];
 };
@@ -20,6 +21,7 @@ export const ROLES: Role[] = [
   {
     title: "Software Engineer",
     company: "Greenbotz Platform Private Limited",
+    startDate: "2024-05-01",
     meta: "Coimbatore · May 2024 – Present",
     projects: [
       {
@@ -41,11 +43,13 @@ export const ROLES: Role[] = [
         ],
       },
       {
-        name: "Building Management System (NYP)",
-        tags: ["Node.js", "Python", "RabbitMQ", "Socket.IO", "PostgreSQL", "React.js", "React Context"],
+        name: "Greengate Smart Building Management System (Access Management)",
+        tags: ["React.js", "Go", "Express.js", "Node.js", "Microservices", "Multi-Tenant Architecture", "RBAC", "Twilio"],
         bullets: [
-          "Built a facial-recognition-based Building Management System backend in Node.js and TypeScript enabling real-time person tracking, surveillance, security patrol monitoring, and multi-system integration (SPLUS, KABAM, RabbitMQ) for enterprise security operations.",
-          "Engineered a high-frequency producer-consumer pipeline where camera detection events are queued asynchronously (1000-message capacity, 5-min TTL, manual acknowledgement) and streamed live to clients over WebSocket — decoupling detection throughput from delivery and ensuring zero message loss under load.",
+          "Designed the layered architecture for a 10+ service, multi-tenant access-management platform serving 40+ clients in Singapore, each managing an average of 2,000+ residents. Led a two-developer team, making design decisions, reviewing work, and driving feature delivery.",
+          "Built tenant resource management that allocates dedicated databases to high-traffic clients and shared databases where capacity allows, plus scope-level RBAC for blocks, floors, and other areas with instant access grants and revocations.",
+          "Implemented real-time alerts for unauthorized people and vehicles, and a visitor workflow that grants entry after resident approval through an integrated Twilio video-call module.",
+          "Planned zero-touch intercom provisioning and device pinning, with QR-based unpinning gated by security verification through a site engineer's face capture.",
         ],
       },
     ],
@@ -53,6 +57,7 @@ export const ROLES: Role[] = [
   {
     title: "Software Engineer",
     company: "Demiurge Design",
+    startDate: "2024-01-01",
     meta: "Chennai · Jan 2024 – May 2024",
     projects: [
       {
@@ -69,12 +74,14 @@ export const ROLES: Role[] = [
 ];
 
 export const SKILL_GROUPS: { title: string; items: string[]; span?: string }[] = [
-  { title: "Languages", items: ["JavaScript", "TypeScript", "Go", "Python"] },
-  { title: "Backend", items: ["Node.js", "Express.js", "REST APIs", "Microservices", "Event-driven architecture"], span: "md:col-span-2" },
-  { title: "Frontend", items: ["React.js", "Redux", "React Context", "Tailwind CSS", "Material UI", "Bootstrap", "Ant Design", "Zustand", ""], span: "md:col-span-2" },
-  { title: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL", "Oracle", "Redis"] },
-  { title: "Messaging & Realtime", items: ["MQTT", "RabbitMQ", "Kafka", "Socket.IO", "WebSockets", "BullMQ"], span: "md:col-span-2" },
-  { title: "Testing", items: ["Jest"] },
-  { title: "DevOps & Tooling", items: ["Docker", "GitLab CI/CD", "Bash", "Sentry", "Graylog (GELF)", "Node-cron", "FRP/FRPC", "noVNC", "GoTTY"], span: "md:col-span-2" },
-  { title: "Integration & Hardware", items: ["ADB", "RFID", "Oracle Opera Cloud PMS"] },
+  { title: "Languages", items: ["JavaScript", "TypeScript", "Go", "Python", "HTML5", "CSS3"] },
+  { title: "Backend", items: ["Node.js", "Express.js", "REST APIs", "HTTP Gateways", "Microservices", "Event-driven architecture"], span: "md:col-span-2" },
+  { title: "Frontend", items: ["React.js", "Next.js", "Redux", "React Context", "Tailwind CSS", "Material UI", "Bootstrap", "Ant Design", "Zustand"], span: "md:col-span-2" },
+  { title: "Databases", items: ["SQL", "PostgreSQL", "MongoDB", "MySQL", "Oracle", "Redis"] },
+  { title: "Messaging & Realtime", items: ["Twilio", "MQTT", "RabbitMQ", "Kafka", "Socket.IO", "WebSockets", "BullMQ"], span: "md:col-span-2" },
+  { title: "Testing & Quality", items: ["Jest", "Test plan execution", "Error tracking and monitoring", "Defect resolution"] },
+  { title: "DevOps & Tooling", items: ["Git", "Docker", "GitLab CI/CD", "Bash scripting", "Sentry", "Graylog (GELF)", "Node-cron", "FRP/FRPC", "noVNC", "GoTTY", "Troubleshooting", "Root cause analysis", "Application performance"], span: "md:col-span-2" },
+  { title: "AI Tools", items: ["Claude", "Codex"] },
+  { title: "Integration & Security", items: ["ADB", "RFID", "Oracle Opera Cloud PMS", "Twilio", "Vonage", "Secure authentication", "Role-Based Access Control (RBAC)"] },
+  { title: "Ways of Working", items: ["Agile", "Software Development Life Cycle (SDLC)", "Cross-functional collaboration"] },
 ];
