@@ -273,7 +273,7 @@ function Index() {
                 rel="noopener noreferrer"
                 className="inline-flex h-fit items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
               >
-                GitHub link coming soon
+                View on GitHub
               </a>
             </div>
           </div>
