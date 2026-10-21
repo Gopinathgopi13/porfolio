@@ -25,6 +25,16 @@ export const ROLES: Role[] = [
     meta: "Coimbatore · May 2024 – Present",
     projects: [
       {
+        name: "Greengate Smart Building Management System (Access Management)",
+        tags: ["React.js", "Go", "Express.js", "Node.js", "Microservices", "Multi-Tenant Architecture", "RBAC", "Twilio"],
+        bullets: [
+          "Designed the layered architecture for a 10+ service, multi-tenant access-management platform serving 40+ clients in Singapore, each managing an average of 2,000+ residents. Led a two-developer team, making design decisions, reviewing work, and driving feature delivery.",
+          "Built tenant resource management that allocates dedicated databases to high-traffic clients and shared databases where capacity allows, plus scope-level RBAC for blocks, floors, and other areas with instant access grants and revocations.",
+          "Implemented real-time alerts for unauthorized people and vehicles, and a visitor workflow that grants entry after resident approval through an integrated Twilio video-call module.",
+          "Planned zero-touch intercom provisioning and device pinning, with QR-based unpinning gated by security verification through a site engineer's face capture.",
+        ],
+      },
+      {
         name: "Smart Hotel Management System",
         tags: ["Node.js", "PostgreSQL", "BullMQ", "Redis", "MQTT", "React.js", "React Context", "Go"],
         bullets: [
@@ -40,16 +50,6 @@ export const ROLES: Role[] = [
           "Built an MDM platform for centralized monitoring, control, and automation of Android devices at scale — featuring a Redux-managed React dashboard with real-time device status tracking, an APK distribution pipeline, role-based access control (RBAC), configurable alert rules with multichannel notifications (Email/WhatsApp), and timezone-aware recurring device scheduling.",
           "Implemented remote access infrastructure using noVNC for browser-based screen sharing, GoTTY for web terminal access, ADB for low-level device control, and FRP/FRPC reverse-proxy tunneling for secure port forwarding to devices behind NAT.",
           "Architected a distributed job queue with BullMQ + Redis (background worker pattern, exponential backoff retry) and MQTT pub/sub for real-time device communication — backed by a GitLab CI/CD pipeline with Sentry error tracking and Graylog (GELF) centralized logging.",
-        ],
-      },
-      {
-        name: "Greengate Smart Building Management System (Access Management)",
-        tags: ["React.js", "Go", "Express.js", "Node.js", "Microservices", "Multi-Tenant Architecture", "RBAC", "Twilio"],
-        bullets: [
-          "Designed the layered architecture for a 10+ service, multi-tenant access-management platform serving 40+ clients in Singapore, each managing an average of 2,000+ residents. Led a two-developer team, making design decisions, reviewing work, and driving feature delivery.",
-          "Built tenant resource management that allocates dedicated databases to high-traffic clients and shared databases where capacity allows, plus scope-level RBAC for blocks, floors, and other areas with instant access grants and revocations.",
-          "Implemented real-time alerts for unauthorized people and vehicles, and a visitor workflow that grants entry after resident approval through an integrated Twilio video-call module.",
-          "Planned zero-touch intercom provisioning and device pinning, with QR-based unpinning gated by security verification through a site engineer's face capture.",
         ],
       },
     ],
